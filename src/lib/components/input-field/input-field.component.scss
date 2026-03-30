@@ -1,0 +1,129 @@
+.ds-input {
+  margin-bottom: var(--ds-space-4);
+
+  &__label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ds-color-text-muted);
+    margin-bottom: calc(var(--ds-space-3) / 2);
+  }
+
+  &__required {
+    color: var(--ds-color-danger);
+  }
+
+  &__tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--ds-color-border);
+    font-size: 1.1rem;
+    cursor: help;
+    margin-left: var(--ds-space-1);
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__field {
+    width: 100%;
+    padding: var(--ds-space-3) var(--ds-space-4);
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--ds-color-text);
+    background-color: var(--ds-color-surface);
+    border: 1px solid var(--ds-color-border);
+    border-radius: var(--ds-radius-1);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    outline: none;
+
+    &::placeholder {
+      color: var(--ds-color-text-subtle);
+    }
+
+    &:focus {
+      border-color: var(--ds-color-brand);
+      box-shadow: 0 0 0 3px var(--ds-focus-ring);
+    }
+
+    &:disabled {
+      background-color: var(--ds-color-surface-muted);
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &:read-only {
+      background-color: var(--ds-color-surface-muted);
+    }
+
+    &--textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+  }
+
+  &__toggle-password {
+    position: absolute;
+    right: var(--ds-space-3);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ds-color-text-subtle);
+    padding: var(--ds-space-1);
+  }
+
+  &__tick {
+    position: absolute;
+    right: var(--ds-space-3);
+    color: var(--ds-color-success);
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  &__error-msg {
+    display: block;
+    margin-top: var(--ds-space-1);
+    font-size: 1.2rem;
+    color: var(--ds-color-danger);
+  }
+
+  &__helper {
+    display: block;
+    margin-top: var(--ds-space-1);
+    font-size: 1.2rem;
+
+    a {
+      color: var(--ds-color-brand);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  // Error state
+  &--error .ds-input__field {
+    border-color: var(--ds-color-danger);
+
+    &:focus {
+      box-shadow: 0 0 0 3px var(--ds-focus-ring-danger);
+    }
+  }
+
+  // Disabled state
+  &--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+

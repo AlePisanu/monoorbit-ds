@@ -1,0 +1,24 @@
+<label
+  class="ds-checkbox"
+  [class.ds-checkbox--checked]="checked"
+  [class.ds-checkbox--disabled]="isDisabled()"
+  [for]="uniqueId()"
+>
+  <input
+    type="checkbox"
+    class="ds-checkbox__input"
+    [id]="uniqueId()"
+    [checked]="checked"
+    [disabled]="isDisabled()"
+    (change)="toggle()"
+    (blur)="onBlur()"
+  />
+  <span class="ds-checkbox__box">
+    @if (checked) {
+      <span class="ds-checkbox__icon" aria-hidden="true">&#10003;</span>
+    }
+  </span>
+  @if (label()) {
+    <span class="ds-checkbox__label">{{ label() }}</span>
+  }
+</label>

@@ -1,0 +1,18 @@
+<div class="ds-tabs" role="tablist">
+  @for (tab of tabs(); track tab.id; let i = $index) {
+    <button
+      #tabBtn
+      class="ds-tabs__tab"
+      [class.ds-tabs__tab--active]="tab.id === activeTabId()"
+      role="tab"
+      [id]="'tab-' + tab.id"
+      [attr.aria-selected]="tab.id === activeTabId()"
+      [attr.aria-controls]="'panel-' + tab.id"
+      [tabindex]="tab.id === activeTabId() ? 0 : -1"
+      (click)="selectTab(tab.id)"
+      (keydown)="onKeyDown($event, i)"
+    >
+      {{ tab.label }}
+    </button>
+  }
+</div>

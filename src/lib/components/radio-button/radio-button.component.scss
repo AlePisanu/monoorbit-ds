@@ -1,0 +1,58 @@
+.ds-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--ds-space-2) + 2px);
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__circle {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--ds-color-border-strong);
+    border-radius: 50%;
+    background-color: var(--ds-color-surface);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--ds-color-brand);
+  }
+
+  &__label {
+    font-size: 1.6rem;
+    color: var(--ds-color-text);
+  }
+
+  &--checked &__circle {
+    border-color: var(--ds-color-brand);
+  }
+
+  &:hover &__circle {
+    border-color: var(--ds-color-brand);
+  }
+
+  &__input:focus-visible + &__circle {
+    outline: 2px solid var(--ds-color-highlight);
+    outline-offset: 2px;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+

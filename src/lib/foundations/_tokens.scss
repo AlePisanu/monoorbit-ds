@@ -1,0 +1,144 @@
+// ==========================================================================
+// Design Tokens
+// ==========================================================================
+
+//
+// PALETTE
+// --------------------------------------------------------------------------
+
+$indigo-500: #4f46e5;
+$indigo-600: #4338ca;
+$indigo-700: #3730a3;
+
+$cyan-500: #06b6d4;
+$cyan-600: #0891b2;
+
+$gray-900: #0f172a;
+$gray-800: #1e293b;
+$gray-700: #334155;
+$gray-500: #64748b;
+$gray-400: #94a3b8;
+$gray-200: #e2e8f0;
+$gray-100: #f1f5f9;
+$gray-50: #f8fafc;
+
+$red-500: #ef4444;
+$green-500: #22c55e;
+
+//
+// SEMANTIC TOKENS
+// --------------------------------------------------------------------------
+
+// Typography
+$font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+// Brand
+$color-brand: $indigo-500;
+$color-brand-strong: $indigo-600;
+$color-brand-muted: #818cf8;
+
+// Highlight / Accent
+$color-highlight: $cyan-500;
+$color-highlight-strong: $cyan-600;
+
+// Text
+$color-text: $gray-900;
+$color-text-muted: $gray-700;
+$color-text-subtle: $gray-500;
+
+// Borders
+$color-border: $gray-200;
+$color-border-strong: $gray-400;
+
+// Surfaces
+$color-surface: #ffffff;
+$color-surface-muted: $gray-100;
+$color-canvas: $gray-50;
+
+// States
+$color-danger: $red-500;
+$color-success: $green-500;
+
+// Overlay & inverse
+$color-overlay: rgba(15, 23, 42, 0.6);
+$color-inverse: #ffffff;
+
+// Supporting effects
+$color-brand-soft: rgba(79, 70, 229, 0.12);
+$color-highlight-soft: rgba(6, 182, 212, 0.12);
+$color-highlight-soft-strong: rgba(6, 182, 212, 0.2);
+$color-danger-soft: rgba(239, 68, 68, 0.16);
+$color-border-soft: rgba(15, 23, 42, 0.08);
+
+$gradient-emphasis: linear-gradient(
+  135deg,
+  $color-brand 0%,
+  $color-highlight 100%
+);
+
+//
+// SPACING
+// --------------------------------------------------------------------------
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 24px;
+$space-6: 32px;
+$space-7: 40px;
+$space-8: 48px;
+
+//
+// BORDER RADIUS
+// --------------------------------------------------------------------------
+
+$radius-1: 6px;
+$radius-2: 10px;
+$radius-3: 16px;
+$radius-pill: 999px;
+
+//
+// ELEVATION
+// --------------------------------------------------------------------------
+
+$elevation-1: 0 2px 6px rgba(15, 23, 42, 0.06);
+$elevation-2: 0 8px 20px rgba(15, 23, 42, 0.08);
+$elevation-3: 0 16px 32px rgba(15, 23, 42, 0.12);
+$elevation-card: 0 12px 32px rgba(15, 23, 42, 0.1);
+
+//
+// FOCUS
+// --------------------------------------------------------------------------
+
+$focus-ring: rgba(79, 70, 229, 0.25);
+$focus-ring-danger: rgba(239, 68, 68, 0.25);
+
+//
+// MOTION
+// --------------------------------------------------------------------------
+
+$transition-base: 0.2s ease-in-out;
+
+//
+// Z-INDEX
+// --------------------------------------------------------------------------
+
+$z-index-base: 0;
+$z-index-raised: 1;
+$z-index-overlay: 2;
+$z-index-tooltip: 4;
+$z-index-floating: 8;
+$z-index-sticky: 9;
+$z-index-header: 10;
+$z-index-modal: 1000;
+$z-index-modal-content: 1001;
+$z-index-loader: 9999;

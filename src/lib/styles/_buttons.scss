@@ -1,0 +1,145 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ds-font-family-base, #{$font-family-base});
+  font-weight: $font-weight-medium;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  @include basic-transition;
+  gap: 8px;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:disabled,
+  &--disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  // Sizes
+  &--lg {
+    padding: $space-4 $space-6;
+    font-size: 1.8rem;
+  }
+
+  &--md {
+    padding: $space-3 $space-5;
+    font-size: 1.6rem;
+  }
+
+  &--sm {
+    padding: 10px 18px;
+    font-size: 1.4rem;
+  }
+
+  &--xs {
+    padding: $space-2 14px;
+    font-size: 1.2rem;
+  }
+
+  // Variants
+  &--primary {
+    background-color: var(--ds-color-brand, #{$color-brand});
+    color: var(--ds-color-inverse, #{$color-inverse});
+    border-color: var(--ds-color-brand, #{$color-brand});
+
+    &:hover {
+      background-color: var(--ds-color-brand-strong, #{$color-brand-strong});
+      border-color: var(--ds-color-brand-strong, #{$color-brand-strong});
+    }
+
+    &:active {
+      background-color: var(--ds-color-brand-strong, #{$color-brand-strong});
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: var(--ds-color-brand, #{$color-brand});
+    border-color: var(--ds-color-border-strong, #{$color-border-strong});
+
+    &:hover {
+      background-color: var(--ds-color-brand-soft, #{$color-brand-soft});
+      border-color: var(--ds-color-brand, #{$color-brand});
+    }
+  }
+
+  &--accent {
+    background-color: var(--ds-color-highlight, #{$color-highlight});
+    color: var(--ds-color-inverse, #{$color-inverse});
+    border-color: var(--ds-color-highlight, #{$color-highlight});
+
+    &:hover {
+      background-color: var(--ds-color-highlight-strong, #{$color-highlight-strong});
+      border-color: var(--ds-color-highlight-strong, #{$color-highlight-strong});
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: var(--ds-color-brand, #{$color-brand});
+    border-color: transparent;
+
+    &:hover {
+      background-color: var(--ds-color-brand-soft, #{$color-brand-soft});
+    }
+  }
+
+  &--white {
+    background-color: var(--ds-color-surface, #{$color-surface});
+    color: var(--ds-color-brand, #{$color-brand});
+    border-color: var(--ds-color-border, #{$color-border});
+
+    &:hover {
+      background-color: var(--ds-color-surface-muted, #{$color-surface-muted});
+      border-color: var(--ds-color-border, #{$color-border});
+    }
+  }
+
+  // Full width
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+}
+
+// Text link
+.ds-link {
+  color: var(--ds-color-brand, #{$color-brand});
+  font-weight: $font-weight-medium;
+  text-decoration: underline;
+  cursor: pointer;
+  @include basic-transition;
+
+  &:hover {
+    color: var(--ds-color-brand-muted, #{$color-brand-muted});
+  }
+
+  &--accent {
+    color: var(--ds-color-highlight, #{$color-highlight});
+    &:hover { color: var(--ds-color-highlight-strong, #{$color-highlight-strong}); }
+  }
+}
+
+.ds-btn__loader {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: ds-spin 0.85s linear infinite;
+}

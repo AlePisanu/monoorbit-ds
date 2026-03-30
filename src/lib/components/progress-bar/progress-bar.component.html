@@ -1,0 +1,26 @@
+<div class="ds-progress"
+     role="progressbar"
+     [attr.aria-valuenow]="currentStep()"
+     [attr.aria-valuemin]="0"
+     [attr.aria-valuemax]="steps() - 1"
+     [attr.aria-label]="'Step ' + (currentStep() + 1) + ' of ' + steps()">
+  <div class="ds-progress__track">
+    <div class="ds-progress__fill" [style.width.%]="progressPercent"></div>
+  </div>
+  @if (steps() > 1) {
+    <div class="ds-progress__steps">
+      @for (step of stepsArray; track step; let i = $index) {
+        <div
+          class="ds-progress__step"
+          [class.ds-progress__step--active]="i <= currentStep()"
+          [class.ds-progress__step--current]="i === currentStep()"
+        >
+          <span class="ds-progress__dot">{{ i + 1 }}</span>
+          @if (labels()[i]) {
+            <span class="ds-progress__label">{{ labels()[i] }}</span>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

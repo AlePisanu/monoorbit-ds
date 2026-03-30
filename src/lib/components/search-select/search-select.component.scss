@@ -1,0 +1,91 @@
+.ds-search-select {
+  position: relative;
+  margin-bottom: var(--ds-space-4);
+
+  &__label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ds-color-text-muted);
+    margin-bottom: calc(var(--ds-space-3) / 2);
+  }
+
+  &__required {
+    color: var(--ds-color-danger);
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    padding: var(--ds-space-3) var(--ds-space-7) var(--ds-space-3) var(--ds-space-4);
+    font-family: inherit;
+    font-size: 1.6rem;
+    color: var(--ds-color-text);
+    background-color: var(--ds-color-surface);
+    border: 1px solid var(--ds-color-border);
+    border-radius: var(--ds-radius-1);
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+
+    &::placeholder {
+      color: var(--ds-color-text-subtle);
+    }
+
+    &:focus {
+      border-color: var(--ds-color-brand);
+      box-shadow: 0 0 0 3px var(--ds-focus-ring);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: calc(var(--ds-space-3) + 2px);
+    top: 50%;
+    display: inline-flex;
+    width: 10px;
+    height: 10px;
+    transform: translateY(-70%) rotate(45deg);
+    color: var(--ds-color-text-subtle);
+    pointer-events: none;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin: var(--ds-space-1) 0 0;
+    padding: var(--ds-space-1) 0;
+    background-color: var(--ds-color-surface);
+    border: 1px solid var(--ds-color-border);
+    border-radius: var(--ds-radius-1);
+    box-shadow: var(--ds-elevation-2);
+    list-style: none;
+    max-height: 240px;
+    overflow-y: auto;
+  }
+
+  &__option {
+    padding: calc(var(--ds-space-2) + 2px) var(--ds-space-4);
+    font-size: 1.6rem;
+    color: var(--ds-color-text);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: var(--ds-color-surface-muted);
+    }
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+

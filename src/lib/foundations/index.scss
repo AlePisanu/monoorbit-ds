@@ -1,0 +1,79 @@
+@use 'tokens' as *;
+
+:root {
+  --ds-font-family-base: #{$font-family-base};
+
+  --ds-color-brand: #{$color-brand};
+  --ds-color-brand-strong: #{$color-brand-strong};
+  --ds-color-brand-muted: #{$color-brand-muted};
+
+  --ds-color-highlight: #{$color-highlight};
+  --ds-color-highlight-strong: #{$color-highlight-strong};
+
+  --ds-color-text: #{$color-text};
+  --ds-color-text-muted: #{$color-text-muted};
+  --ds-color-text-subtle: #{$color-text-subtle};
+
+  --ds-color-border: #{$color-border};
+  --ds-color-border-strong: #{$color-border-strong};
+  --ds-color-border-soft: #{$color-border-soft};
+
+  --ds-color-surface: #{$color-surface};
+  --ds-color-surface-muted: #{$color-surface-muted};
+  --ds-color-canvas: #{$color-canvas};
+
+  --ds-color-danger: #{$color-danger};
+  --ds-color-success: #{$color-success};
+
+  --ds-color-overlay: #{$color-overlay};
+  --ds-color-inverse: #{$color-inverse};
+
+  --ds-color-brand-soft: #{$color-brand-soft};
+  --ds-color-highlight-soft: #{$color-highlight-soft};
+  --ds-color-highlight-soft-strong: #{$color-highlight-soft-strong};
+
+  --ds-gradient-emphasis: #{$gradient-emphasis};
+
+  --ds-space-1: #{$space-1};
+  --ds-space-2: #{$space-2};
+  --ds-space-3: #{$space-3};
+  --ds-space-4: #{$space-4};
+  --ds-space-5: #{$space-5};
+  --ds-space-6: #{$space-6};
+  --ds-space-7: #{$space-7};
+  --ds-space-8: #{$space-8};
+
+  --ds-radius-1: #{$radius-1};
+  --ds-radius-2: #{$radius-2};
+  --ds-radius-3: #{$radius-3};
+  --ds-radius-pill: #{$radius-pill};
+
+  --ds-elevation-1: #{$elevation-1};
+  --ds-elevation-2: #{$elevation-2};
+  --ds-elevation-3: #{$elevation-3};
+  --ds-elevation-card: #{$elevation-card};
+
+  --ds-focus-ring: #{$focus-ring};
+  --ds-focus-ring-danger: #{$focus-ring-danger};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: var(--ds-font-family-base, #{$font-family-base});
+  font-weight: $font-weight-regular;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--ds-color-text, #{$color-text});
+  background-color: var(--ds-color-canvas, #{$color-canvas});
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

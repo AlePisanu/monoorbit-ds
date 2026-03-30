@@ -1,0 +1,111 @@
+.ds-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ds-fade-in 0.2s ease-out;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ds-color-overlay);
+  }
+
+  &__dialog {
+    position: relative;
+    background-color: var(--ds-color-surface);
+    border-radius: var(--ds-radius-3);
+    box-shadow: var(--ds-elevation-3);
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: ds-slide-up 0.3s ease-out;
+
+    &--sm { width: 90%; max-width: 400px; }
+    &--md { width: 90%; max-width: 600px; }
+    &--lg { width: 90%; max-width: 900px; }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--ds-space-5) calc(var(--ds-space-6) - var(--ds-space-1)) 0;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--ds-color-text);
+    margin: 0;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--ds-color-text-subtle);
+    transition: all 0.2s ease-in-out;
+    margin-left: auto;
+    font-size: 2rem;
+    line-height: 1;
+
+    &:hover {
+      background-color: var(--ds-color-surface-muted);
+      color: var(--ds-color-text);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ds-color-brand);
+      outline-offset: 2px;
+    }
+  }
+
+  &__body {
+    padding: var(--ds-space-5) calc(var(--ds-space-6) - var(--ds-space-1));
+  }
+
+  &__footer {
+    padding: 0 calc(var(--ds-space-6) - var(--ds-space-1)) var(--ds-space-5);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--ds-space-3);
+  }
+}
+
+@keyframes ds-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ds-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-modal,
+  .ds-modal__dialog {
+    animation: none;
+  }
+}
+

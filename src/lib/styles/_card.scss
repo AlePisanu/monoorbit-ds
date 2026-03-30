@@ -1,0 +1,41 @@
+// ==========================================================================
+// Card
+// ==========================================================================
+
+@use 'variables' as *;
+
+.ds-card {
+  height: 100%;
+
+  &__content {
+    background-color: var(--ds-color-surface, #{$color-surface});
+    border: 1px solid var(--ds-color-border-soft, #{$color-border-soft});
+    border-radius: $radius-3;
+    padding: $space-7;
+    box-shadow: var(--ds-elevation-card, #{$elevation-card});
+    transition: transform $transition-base, box-shadow $transition-base;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--ds-elevation-3, #{$elevation-3});
+    }
+
+    @media (max-width: 768px) {
+      padding: $space-6 $space-5;
+    }
+  }
+
+  &--no-border {
+    .ds-card__content {
+      border: 0;
+    }
+  }
+
+  &--no-shadow .ds-card__content {
+    box-shadow: none;
+  }
+
+  &--flat {
+    height: unset;
+  }
+}

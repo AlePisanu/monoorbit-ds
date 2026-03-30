@@ -1,0 +1,64 @@
+.ds-checkbox {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: calc(var(--ds-space-2) + 2px);
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__box {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--ds-color-border-strong);
+    border-radius: calc(var(--ds-radius-1) / 2);
+    background-color: var(--ds-color-surface);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--ds-color-inverse);
+  }
+
+  &__label {
+    font-size: 1.6rem;
+    color: var(--ds-color-text);
+    line-height: 1.4;
+    padding-top: 1px;
+  }
+
+  // Checked
+  &--checked &__box {
+    background-color: var(--ds-color-brand);
+    border-color: var(--ds-color-brand);
+  }
+
+  // Hover
+  &:hover &__box {
+    border-color: var(--ds-color-brand);
+  }
+
+  // Focus
+  &__input:focus-visible + &__box {
+    outline: 2px solid var(--ds-color-highlight);
+    outline-offset: 2px;
+  }
+
+  // Disabled
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+

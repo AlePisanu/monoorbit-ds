@@ -1,0 +1,37 @@
+<main class="app-shell">
+  <section class="hero">
+    <p class="eyebrow">Reusable UI Foundation</p>
+    <h1>monoorbit-ds</h1>
+    <p class="summary">
+      Framework-agnostic foundations, semantic tokens, and a first-party Angular implementation in one workspace.
+    </p>
+  </section>
+
+  <section class="panel">
+    <h2>Foundations</h2>
+    <p>Use the neutral core from any stack via SCSS, CSS variables, or token JSON.</p>
+    <pre><code>@use 'monoorbit-ds/foundations';
+@import 'monoorbit-ds/tokens.css';</code></pre>
+  </section>
+
+  <section class="panel">
+    <h2>Angular Implementation</h2>
+    <p>Angular is the current component adapter, not the entire system.</p>
+    <pre><code>import &#123; ButtonComponent, InputFieldComponent &#125; from 'monoorbit-ds/angular';</code></pre>
+  </section>
+
+  <section class="panel">
+    <h2>Available Components</h2>
+    <ul class="component-list">
+      @for (component of components; track component) {
+        <li>{{ component }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>Styles</h2>
+    <p>The full style layer builds on top of foundations and keeps component classes aligned with the same token contract.</p>
+    <pre><code>@use 'monoorbit-ds/styles';</code></pre>
+  </section>
+</main>

@@ -1,0 +1,27 @@
+// ==========================================================================
+// Grid utilities
+// ==========================================================================
+
+@use 'variables' as *;
+
+.ds-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-6;
+
+  @media (max-width: 768px) {
+    padding: 0 $space-4;
+  }
+}
+
+.ds-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(#{$space-4} / -2);
+}
+
+.ds-col {
+  flex: 1;
+  padding: 0 calc(#{$space-4} / 2);
+}

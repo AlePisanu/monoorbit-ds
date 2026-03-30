@@ -1,0 +1,24 @@
+<div
+  class="ds-card-component"
+  [class.ds-card-component--horizontal]="layout() === 'horizontal'"
+  [class.ds-card-component--no-shadow]="!shadow()"
+  [class.ds-card-component--compact]="compact()"
+>
+  @if (imageUrl()) {
+    <div class="ds-card-component__image">
+      <img [src]="imageUrl()" [alt]="imageAlt() || title()" loading="lazy" />
+    </div>
+  }
+  <div class="ds-card-component__body">
+    @if (title()) {
+      <h3 class="ds-card-component__title">{{ title() }}</h3>
+    }
+    @if (description()) {
+      <p class="ds-card-component__description">{{ description() }}</p>
+    }
+    <ng-content></ng-content>
+  </div>
+  <div class="ds-card-component__footer">
+    <ng-content select="[card-footer]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div
+  class="ds-loader"
+  [class.ds-loader--overlay]="isOverlay()"
+  [ngClass]="['ds-loader--' + size(), 'ds-loader--' + color()]"
+  role="status"
+  [attr.aria-label]="ariaLabel()"
+>
+  <div class="ds-loader__spinner" aria-hidden="true">
+    <span class="ds-loader__circle"></span>
+  </div>
+</div>

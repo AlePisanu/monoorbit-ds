@@ -1,0 +1,105 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 4rem 2.4rem;
+  background:
+    radial-gradient(circle at top left, var(--ds-color-highlight-soft-strong, rgba(15, 159, 140, 0.2)), transparent 28%),
+    radial-gradient(circle at top right, var(--ds-focus-ring, rgba(31, 79, 209, 0.16)), transparent 24%),
+    linear-gradient(180deg, var(--ds-color-canvas, #f8fafc) 0%, var(--ds-color-surface, #ffffff) 100%);
+}
+
+.hero,
+.panel {
+  max-width: 96rem;
+  margin: 0 auto 2.4rem;
+  padding: 2.4rem;
+  border: 1px solid var(--ds-color-border-soft, rgba(16, 24, 40, 0.08));
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--ds-elevation-2, 0 12px 32px rgba(16, 24, 40, 0.12));
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--ds-color-highlight, #0f9f8c);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.8rem;
+  line-height: 1.1;
+  color: var(--ds-color-text, #101828);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--ds-color-text, #101828);
+}
+
+.summary {
+  max-width: 64rem;
+  margin-top: 1.2rem;
+  font-size: 1.8rem;
+  color: var(--ds-color-text-muted, #344054);
+}
+
+pre {
+  overflow-x: auto;
+  margin: 1.2rem 0 0;
+  padding: 1.2rem 1.4rem;
+  border-radius: 1.2rem;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+code {
+  font-family: Consolas, 'Courier New', monospace;
+}
+
+.component-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.component-list li {
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  background: var(--ds-color-surface, #ffffff);
+  color: var(--ds-color-text, #101828);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--ds-color-border-soft, rgba(16, 24, 40, 0.08));
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 2rem 1.6rem;
+  }
+
+  .hero,
+  .panel {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 3.4rem;
+  }
+}

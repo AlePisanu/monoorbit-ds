@@ -1,0 +1,23 @@
+<div class="ds-accordion" [class.ds-accordion--open]="isOpen()">
+  <button
+    class="ds-accordion__header"
+    type="button"
+    (click)="toggle()"
+    [attr.aria-expanded]="isOpen()"
+    [attr.aria-controls]="'accordion-body'"
+  >
+    <span class="ds-accordion__title">{{ title() }}</span>
+
+    <span class="ds-accordion__arrow" aria-hidden="true"></span>
+  </button>
+
+  <div
+    class="ds-accordion__body"
+    id="accordion-body"
+    [class.ds-accordion__body--open]="isOpen()"
+  >
+    <div class="ds-accordion__content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

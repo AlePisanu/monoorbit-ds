@@ -1,0 +1,26 @@
+<label
+  class="ds-radio"
+  [class.ds-radio--checked]="isChecked"
+  [class.ds-radio--disabled]="isDisabled()"
+  [for]="uniqueId()"
+>
+  <input
+    type="radio"
+    class="ds-radio__input"
+    [id]="uniqueId()"
+    [name]="name()"
+    [value]="radioValue()"
+    [checked]="isChecked"
+    [disabled]="isDisabled()"
+    (change)="select()"
+    (blur)="onBlur()"
+  />
+  <span class="ds-radio__circle">
+    @if (isChecked) {
+      <span class="ds-radio__dot"></span>
+    }
+  </span>
+  @if (label()) {
+    <span class="ds-radio__label">{{ label() }}</span>
+  }
+</label>

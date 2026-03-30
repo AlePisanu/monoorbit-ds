@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# monoorbit-ds
+
+A design system workspace with framework-agnostic foundations and a first-party Angular implementation.
+
+## Features
+
+- **Framework-agnostic foundations** exposed as SCSS, CSS custom properties, and JSON tokens
+- **13 standalone Angular components** built on top of those foundations
+- **Neutral visual foundation** that can be re-skinned without rewriting component CSS
+- **BEM-style** SCSS architecture
+- **Accessible** interactions with keyboard navigation and ARIA support
+- **ControlValueAccessor** support for form controls
+
+## Getting Started
+
+Import the foundations or the full style layer:
+
+```scss
+@use 'monoorbit-ds/foundations';
+@use 'monoorbit-ds/styles';
+```
+
+Then import Angular components when needed:
+
+```typescript
+import { InputFieldComponent, CheckboxComponent } from 'monoorbit-ds/angular';
+```
+
+## Components
+
+| Component | Selector | Description |
+|-----------|----------|-------------|
+| Button | `ds-button` | Button with variants, sizes, loading state |
+| Input Field | `ds-input-field` | Text input with validation, password toggle |
+| Checkbox | `ds-checkbox` | Checkbox with form control support |
+| Radio Button | `ds-radio-button` | Radio with form control support |
+| Search Select | `ds-search-select` | Searchable dropdown |
+| Accordion | `ds-accordion` | Expandable content panel |
+| Tabs | `ds-tabs` | Tab navigation |
+| Modal | `ds-modal` | Dialog overlay |
+| Card | `ds-card` | Content card with image |
+| Loader | `ds-loader` | Loading spinner |
+| Progress Bar | `ds-progress-bar` | Step progress indicator |
+| Scroll Top | `ds-scroll-top` | Back to top button |
+| Drag & Drop | `ds-drag-drop` | File upload zone |

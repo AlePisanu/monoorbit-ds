@@ -1,0 +1,42 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+@use 'variables' as *;
+
+@mixin basic-transition {
+  transition: $transition-base;
+}
+
+@mixin media-height($size) {
+  @if $size == sm {
+    @media (max-height: 799px) { @content; }
+  }
+  @if $size == xs {
+    @media (max-height: 720px) { @content; }
+  }
+}
+
+@mixin focus-ring {
+  outline: 2px solid var(--ds-color-brand, #{$color-brand});
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--ds-focus-ring, #{$focus-ring});
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
