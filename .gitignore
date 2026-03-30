@@ -46,3 +46,4 @@ storybook-static/
 .editorconfig
 CON
 settings.local.json
+.vscode/
